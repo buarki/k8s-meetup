@@ -1,0 +1,24 @@
+apiVersion: "apps/v1"
+kind: Deployment
+metadata:
+  name: "app-2"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      instance: app-2
+  template:
+    metadata:
+      labels:
+        instance: app-2
+    spec:
+      containers:
+        - name: app-2
+          image: oreasek/app-2
+          ports:
+            - containerPort: 8080 # note that this one matchs with port bellow
+          env:
+            - name: PORT
+              value: "8080"
+            - name: DATABASE_PASSWORD
+              value: "https://www.youtube.com/watch?v=wxKt8251cvo"

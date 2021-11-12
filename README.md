@@ -5,5 +5,5 @@ This is a pratical quick straightforward hands-on tutorial about kubernetes usin
 ## TOC
 
 - [1. Getting started](1-getting-started/README.md)
-- [2. wip-Environment variables and secrets](#2-service)
+- [2. Environment variables and secrets](2-environment-variables/README.md)
 
