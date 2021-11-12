@@ -7,7 +7,7 @@
 ## 1. How to define environment variables <div id='1-how-to-define-environment-variables'>
 To define env vars you should add `env` attribute at containers definition, as you can see at [deployment.yml](/deployment.yml).
 
-## 2. Deploy the app <div id='deploy-the-app'>
+## 2. Deploy the app <div id='2-deploy-the-app'>
 
 As you can see at [ingress.yml](/ingress.yml) we have the host `app-2-of-tutorial.com` defined, so `add it to your /etc/hosts´:
 

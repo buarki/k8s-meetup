@@ -1,0 +1,27 @@
+apiVersion: "apps/v1"
+kind: Deployment
+metadata:
+  name: "app-3"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      instance: app-3
+  template:
+    metadata:
+      labels:
+        instance: app-3
+    spec:
+      containers:
+        - name: app-3
+          image: oreasek/app-3
+          ports:
+            - containerPort: 8080 # note that this one matchs with port bellow
+          env:
+            - name: PORT
+              value: "8080"
+            - name: VIDEO_URL # this is the environment variable defined at the service code in Go
+              valueFrom:
+                secretKeyRef:
+                  name: my-safe-secret # this is the secret name
+                  key: useful_video # this is the key you added to secret
