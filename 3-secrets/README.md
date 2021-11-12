@@ -52,7 +52,7 @@ kubectl get secrets my-safe-secret -o json
 
 As we say in Brazil, "I don't want to fill sausage", so just take a look at [deployment.yml](deployment.yml) and you'll see how to use it.
 
-NOTE: remember to add the host `app-4-of-tutorial.com` to your /etc/hosts and then run:
+NOTE: remember to add the host `app-3-of-tutorial.com` to your /etc/hosts and then run:
 
 ```
 kubectl apply -f .
@@ -61,5 +61,5 @@ kubectl apply -f .
 To consume the service:
 
 ```
-curl https://app-4-of-tutorial.com -k
+curl https://app-3-of-tutorial.com -k
 ```

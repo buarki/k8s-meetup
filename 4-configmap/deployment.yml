@@ -1,0 +1,22 @@
+apiVersion: "apps/v1"
+kind: Deployment
+metadata:
+  name: "app-4"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      instance: app-4
+  template:
+    metadata:
+      labels:
+        instance: app-4
+    spec:
+      containers:
+        - name: app-4
+          image: oreasek/app-4
+          ports:
+            - containerPort: 8080 # note that this one matchs with configmap.yml
+          envFrom:
+            - configMapRef:
+                name: app-4-config-map-for-local-development

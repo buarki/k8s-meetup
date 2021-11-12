@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-4-config-map-for-local-development
+data:
+  DATABASE_HOST: "local-development-database-host"
+  DATABASE_PASSWORD: "local-development-password"
+  DATABASE_USER: "local-development-user"
+  PORT: "8080"
