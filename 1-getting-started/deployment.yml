@@ -1,0 +1,19 @@
+apiVersion: apps/v1 # set of obejects that Deployment belongs to
+kind: Deployment # kind of object
+metadata:
+  name: app-1 # name of this deployment
+spec:
+  replicas: 2 # how many instances we want running
+  selector:
+    matchLabels:
+      instance: app-1 # setting how this Deployment will look for its managed Pods
+  template: # how we want that Pods look like
+    metadata:
+      labels:
+        instance: app-1 # label of Pod (note that this one matches with matchLabels of selector attribute bellow)
+    spec:
+      containers:
+        - name: app-1 # a container that will run inside of Pod
+          image: oreasek/app-1
+          ports:
+            - containerPort: 8080
