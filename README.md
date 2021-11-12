@@ -8,3 +8,4 @@ This is a pratical quick straightforward hands-on tutorial about kubernetes usin
 - [2. Environment variables and secrets](2-environment-variables/README.md)
 - [3. Secrets](3-secrets/README.md)
 - [4. ConfigMap](4-configmap/README.md)
+- [5. PVC](5-pvc/README.md)

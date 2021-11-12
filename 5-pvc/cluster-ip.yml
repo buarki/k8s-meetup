@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-5-service
+spec:
+  type: ClusterIP
+  selector: # send traffic to Pods that match with...
+    instance: app-5 # ... this label (look for it on deployment.yml file)
+  ports:
+    - port: 8080 # this is the service port
+      targetPort: 8080 # it tells to service to send traffic to port 8080 of Pods

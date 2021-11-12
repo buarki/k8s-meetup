@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: simple-pv
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi # how much volume I want
+  accessModes:
+    - ReadWriteOnce # permissions
+  hostPath:
+    path: "/mnt/k8s" # "real" path on Node that we created

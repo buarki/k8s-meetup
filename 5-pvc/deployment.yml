@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      instance: app-5
+  template:
+    metadata:
+      labels:
+        instance: app-5
+    spec:
+      volumes:
+        - name: simple-volume
+          persistentVolumeClaim:
+            claimName: simple-pvc
+      containers:
+        - name: app-5
+          image: oreasek/app-5
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: "/usr/data" # the path /usr/data on container is sync with minikube's path '/mnt/k8s'
+              name: simple-volume
+

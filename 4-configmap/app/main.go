@@ -7,10 +7,6 @@ import (
 	"os"
 )
 
-const (
-	pissedOffPeople = "VIDEO_URL"
-)
-
 func handler(w http.ResponseWriter, r *http.Request) {
 	databaseHost := os.Getenv("DATABASE_HOST")
 	if databaseHost == "" {
